@@ -1,4 +1,3 @@
-// Get the button click event for adding to cart
 const addToCartBtns = document.querySelectorAll('.add-to-cart');
 
 
@@ -25,18 +24,15 @@ addToCartBtns.forEach((btn) => {
       quantity: document.querySelector('input[type="number"]').value || 1
     };
 
-    // Get cart from localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; //to get the cart from local storage and if doesn't exist set it to empty list.
 
-    // Check if product already exists in the cart
     const productIndex = cart.findIndex(item => item.id === product.id);
     if (productIndex !== -1) {
-      // If product exists, update the quantity
-      cart[productIndex].quantity = parseInt(cart[productIndex].quantity) + parseInt(product.quantity);
+      cart[productIndex].quantity = parseInt(cart[productIndex].quantity) + parseInt(product.quantity); //if products exists then increase the quantity.
       showNotification();
     } else {
-      // If product doesn't exist, add it to the cart
-      cart.push(product);
+      cart.push(product); // If product doesn't exist, add it to the cart
       showNotification();
     }
 
@@ -48,22 +44,17 @@ addToCartBtns.forEach((btn) => {
 });
 
 
-// Fetch cart data from localStorage
 const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Select the table body where cart items will be displayed
 const cartTableBody = document.querySelector('table tbody');
 
 const subtotalElement = document.querySelector('#subtotal table');
 
-// If the cart is empty, show a message
 if (cart.length === 0) {
-    cartTableBody.innerHTML = '<tr class="empty-cart-message"><td colspan="6">Your cart is empty!</td></tr>';
+    cartTableBody.innerHTML = '<tr class="empty-cart-message"><td colspan="6">Your cart is empty!</td></tr>'; //If cart is empty display a message
 } else {
-    // Loop through the cart items and add them to the table
     cart.forEach(item => {
         const row = document.createElement('tr');
-        // Create each column for the product in the cart
         row.innerHTML = `
           
             <td><a href="#" class="remove-item" data-id="${item.id}"><i class="fa-solid fa-circle-xmark"></i></a></td>
@@ -75,33 +66,30 @@ if (cart.length === 0) {
           
         `;
         
-        // Append the row to the table body
-        cartTableBody.appendChild(row);
+        cartTableBody.appendChild(row); //append row with the cartablebody. 
     });
 }
 
-// Add event listener for removing items
 const removeBtns = document.querySelectorAll('.remove-item');
 removeBtns.forEach((btn) => {
     btn.addEventListener('click', function (e) {
         e.preventDefault();
-        const productId = this.getAttribute('data-id');
+        const productId = this.getAttribute('data-id'); //get the data-id of the button clicked and store it in variable productId
 
-        // Remove the item from the cart
-        const updatedCart = cart.filter(item => item.id !== productId);
-        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        const updatedCart = cart.filter(item => item.id !== productId); //creates a new array then only the products whose id doesn't match the productId(button clicked) is added to the new array rest are removed.
+        localStorage.setItem('cart', JSON.stringify(updatedCart)); //creating updatedCart's Json file and storing it in the localStorage
 
         // Reload the page to reflect the updated cart
         location.reload();
     });
 });
 
-// Update subtotal, total, and shipping
-const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-const shipping = 0; // Example shipping cost
+
+const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0); //calculates the total cost of all the items by summing the price and quantity for each item.
+const shipping = 0; 
 const total = subtotal + shipping;
 
-// Display the updated values
+// Display the new values on page using innerHTML
 document.querySelector('#subtotal table').innerHTML = `
     <tr>
         <td>Cart Subtotal</td>
