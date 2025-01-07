@@ -86,7 +86,17 @@ removeBtns.forEach((btn) => {
 
 
 const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0); //calculates the total cost of all the items by summing the price and quantity for each item.
-const shipping = 0; 
+let shipping = 0;
+if (subtotal == 0){
+  shipping = 0;
+}
+else if (subtotal != 0 && subtotal < 99.99){
+  shipping = 4.99;
+}
+else {
+  shipping = 0;
+}
+
 const total = subtotal + shipping;
 
 // Display the new values on page using innerHTML
@@ -97,7 +107,7 @@ document.querySelector('#subtotal table').innerHTML = `
     </tr>
     <tr>
         <td>Shipping</td>
-        <td>Free</td>
+        <td>$${shipping.toFixed(2)}</td>
     </tr>
     <tr>
         <td><strong>Total</strong></td>
