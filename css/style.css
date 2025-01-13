@@ -1253,18 +1253,6 @@ footer .copyright{
         line-height: 22px;
     }
 
-    #sm-banner .banner-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url("/img/banner/b17.jpg");
-    min-width: 665px;
-    height: 50vh;
-    background-size: cover;
-    background-position: center;
-    padding: 30px;
-}
 
     #hero{
         padding: 0px 20px;
@@ -1277,7 +1265,7 @@ footer .copyright{
 
     #feature .fe-box{
         width: 155px;
-        margin: 0px 0px 15px 0;
+        margin: 0px 7px 15px 7px;
     }
 
     #product1 .pro{
