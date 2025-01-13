@@ -577,59 +577,6 @@ footer .copyright{
 }
 
 
-/* start media query */
-
-@media (max-width: 799px){
-    #navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        position: fixed;
-        top: 0;
-        right: -300px;
-        height: 100vh;
-        width: 300px;
-        background-color: #e3e6f3;
-        box-shadow: 0 40px 60 rgba(0, 0, 0, 0.1);
-        padding: 80px 0 0 10px;
-        transition: 0.3s;
-        
-    }
-
-    #navbar.active{
-        right: 0px;
-    }
-
-    #navbar li{
-        margin-bottom: 25px;
-    }
-
-    #mobile{
-        display: flex;
-        align-items: center;
-    }
-
-    #mobile i{
-        color: #1a1a1a;
-        padding-left: 20px;
-        font-size: 24px;
-    }
-
-    #close{
-        display: initial;
-        position: absolute;
-        top: 30px;
-        left: 30px;
-        font-size: 24px;
-        color:#222;
-    }
-
-    #lg-bag{
-        display: none;
-    }
- 
-}
 
 /* shop page */
 
@@ -1174,4 +1121,198 @@ footer .copyright{
 .empty-cart-message td{
     margin-top: 10px;
     padding: 20px;
+}
+
+/* start media query */
+
+@media (max-width: 799px){
+    .section-p1{
+        padding: 40px 38px;
+    }
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #e3e6f3;
+        box-shadow: 0 40px 60 rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i{
+        color: #1a1a1a;
+        padding-left: 20px;
+        font-size: 24px;
+    }
+
+    #close{
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-size: 24px;
+        color:#222;
+    }
+
+    #lg-bag{
+        display: none;
+    }
+
+    #hero {
+        height: 70vh;
+        padding: 0px 80px;
+        background-position: top 30% right 30%;
+    }
+
+    #feature{
+        justify-content: center;
+    }
+ 
+    #feature .fe-box{
+        margin: 15px 15px;
+    }
+
+    #product1 .pro-container{
+        justify-content: center;
+    }
+
+    #product1 .pro {
+        margin: 15px;
+        
+    }
+
+    #banner {
+        height: 22vh;
+    }
+
+    #sm-banner .banner-box {
+        min-width: 100%;
+        height: 30vh;   
+    }
+
+    #banner3{
+        padding: 0px 40px;
+    }
+
+    #banner3 .banner-box{
+        width: 28%;
+    }
+
+    #newsletter .form {
+        width: 70%;
+        
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 16.5%;
+        transform: scale(1.2);
+    } 
+
+    .section-p1{
+        padding: 20px;
+    }
+
+    #header{
+        padding: 10px 30px;
+    }
+
+    h1{
+        font-size: 38px;
+        line-height: 47px;
+    }
+    h2{
+        font-size: 32px;
+        line-height: 47px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        width: 60%;
+        line-height: 22px;
+    }
+
+    #sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url("/img/banner/b17.jpg");
+    min-width: 665px;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    padding: 30px;
+}
+
+    #hero{
+        padding: 0px 20px;
+        background-position: 55%;
+    }
+
+    #feature{
+        justify-content: center;
+    }
+
+    #feature .fe-box{
+        width: 155px;
+        margin: 0px 0px 15px 0;
+    }
+
+    #product1 .pro{
+        width: 100%;
+    }
+
+    #banner{
+        height: 38vh;
+    }
+
+    #sm-banner .banner-box{
+        height: 40vh;
+    }
+
+    #sm-banner .banner-box {
+        margin-bottom: 20px;
+    }
+
+    #banner3{
+        padding: 0px 20px;
+    }
+
+    #banner3 .banner-box{
+        width: 100%;
+    }
+
+    #newsletter .form{
+        width: 100%;
+    }
+
+    #newsletter {
+        padding: 40px 20px;
+    }
+
+    footer .copyright{
+        text-align: start;
+    }
 }
