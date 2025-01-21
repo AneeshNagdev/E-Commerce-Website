@@ -511,6 +511,7 @@ footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #a58787a8;
 }
 footer .col{
     display: flex;
@@ -981,6 +982,7 @@ footer .copyright{
 
 #cart table img{
     width: 70px;
+    margin-top: 10px;
 }
 
 #cart table td:nth-child(1){
@@ -1268,6 +1270,69 @@ footer .copyright{
         bottom: 88%;
         left: 35%;
         
+    }
+
+    /* blog section */
+
+    #blog {
+        padding: 97px 0px 0px 31px;
+    }
+
+    #blog .blog-box h1 {
+        
+        font-size: 45px;
+    }
+
+    #blog .blog-box {
+        padding-right: 20px;
+    }
+
+    /* about section */
+
+
+    #about-header {
+        flex-direction: column;
+    }
+
+    #about-header img {
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+
+    #about-header div {
+        padding-left: 0%;
+    }
+
+    #about-app .video{
+        width: 100%;
+    }
+
+    /* cart page */
+
+    #cart{
+        overflow-x: auto;
+    }
+
+    .cart-banner h2{
+        font-size: 45px;
+    }
+
+    #cart table td:nth-child(3) {
+        
+        white-space: normal;
+    }
+
+    #cart table td:nth-child(4), #cart table td:nth-child(5), #cart table td:nth-child(6) {
+        width: 149px;
+    }
+
+    #cart table img {
+        margin-top: 10px;
+    }
+    
+    footer{
+        background-color: #a58787a8;
     }
 }
 
